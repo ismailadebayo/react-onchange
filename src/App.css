@@ -1,0 +1,17 @@
+.block {
+  max-width: 400px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  width: 350px;
+  height: 30px;
+}
+select, option{
+  width: 350px;
+  height: 30px;
+  border: 1px solid greenyellow;
+}
