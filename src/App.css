@@ -6,10 +6,7 @@
   gap: 20px;
 }
 
-input {
-  width: 350px;
-  height: 30px;
-}
+
 select, option{
   width: 350px;
   height: 30px;

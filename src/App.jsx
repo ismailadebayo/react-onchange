@@ -6,6 +6,7 @@ function App() {
   const [quantity, setQuantity] = useState(1);
   const [message, setMessage] = useState();
   const [book, setBook] = useState("Quran");
+  const [shipping, setShipping] = useState("delivery");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -21,6 +22,10 @@ function App() {
 
   function handleBookChange(e) {
     setBook(e.target.value);
+  }
+
+  function handleShippingChange(e) {
+    setShipping(e.target.value);
   }
 
   return (
@@ -51,7 +56,7 @@ function App() {
         <h2>Quantity: {message} </h2>
       </div>
       <div>
-        <select value={book}  onChange={handleBookChange}>
+        <select value={book} onChange={handleBookChange}>
           <option value="Sahih Bukhari">Sahih Bukhari</option>
           <option value="Sahih Muslim">Sahih Muslim</option>
           <option value="abu dawud">Abu Dawud</option>
@@ -59,6 +64,27 @@ function App() {
         </select>
         <h2>Book: {book}</h2>
       </div>
+      <div>
+        <label htmlFor="pickup">
+          <input
+            type="radio"
+            value="Pick up"
+            checked={shipping === "Pick up"}
+            onChange={handleShippingChange}
+          />
+          Pick up
+        </label>
+        <label htmlFor="delivery">
+          <input
+            type="radio"
+            value="delivery"
+            checked={shipping === "delivery"}
+            onChange={handleShippingChange}
+          />
+          Delivery
+        </label>
+       </div>
+      <p>Shipping:{shipping}</p>
     </div>
   );
 }
